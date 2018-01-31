@@ -21,23 +21,23 @@ export default class {
 			return;
 		}
 
-		this.menu_items = [];										// (array) all the menu items
-		this.$moreMenu = {};										// (element) will hold more menu contents
-		this.$classTarget = {};										// (element) will hold target class element
-		this.$moreLink = {};										// (element) will hold more link
+		this.menu_items = [];							// (array) all the menu items
+		this.$moreMenu = {};							// (element) will hold more menu contents
+		this.$classTarget = {};							// (element) will hold target class element
+		this.$moreLink = {};							// (element) will hold more link
 		this.$menu = document.querySelector(menuTarget);			// (element) will hold main menu element
-		this.moreItemWidth = 0;										// (float) will hold calculated width of the more link
-		this.lastMenuWidth = 0;										// (float) keeps value of latest menu width, this is to prevent useless calculations
-		this.settings = {};											// (object) will hold the settings
+		this.moreItemWidth = 0;							// (float) will hold calculated width of the more link
+		this.lastMenuWidth = 0;							// (float) keeps value of latest menu width, this is to prevent useless calculations
+		this.settings = {};							// (object) will hold the settings
 
 		let default_settings = {
 			more_link_contents: '<a href="#">More..</a>', 			// more link contents
-			sub_tag_type: 'ul',										// type of tag for the submenu, depends on the type of used menu items
-			extra_offset: 1,										// how much earlier should a menu item move into the more menu? how much space should there horizontaly be left (on the right)? default 1px
-			check_for_resize: true									// should we check for browser resizing?
+			sub_tag_type: 'ul',						// type of tag for the submenu, depends on the type of used menu items
+			extra_offset: 1,						// how much earlier should a menu item move into the more menu? how much space should there horizontaly be left (on the right)? default 1px
+			check_for_resize: true						// should we check for browser resizing?
 		};
 
-		Object.assign(this.settings, default_settings, custom_settings); // merge default and custom settings
+		Object.assign(this.settings, default_settings, custom_settings); 	
 
 		this.refresh_menu_items();
 		this.create_more_menu();
@@ -185,7 +185,7 @@ export default class {
 	}
 }
 
-// custome event function fallback from mozilla dev
+// custom event function fallback from mozilla dev
 (function () {
 
   if ( typeof window.CustomEvent === "function" ) { return false; }
